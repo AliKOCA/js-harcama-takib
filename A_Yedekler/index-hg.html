@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="app/assets/fontawesome-free-5.7.1-web/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="app/assets/bootstrap-4.1.3-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="app/assets/css/style.css" rel="stylesheet" />
+    <title>AsG Notlar</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row page-header">
+            <!-- <div id="page-title" class="h3 col-md-2 page-title"></div> -->
+            <div class="input-group col-md-12">
+                <label class="col-form-label" for="ilkTarih">İlk Tarih:</label>
+                <input id="ilkTarih" name="ilkTarih" type="date" class="form-control col-sm-2" required />
+                <label class="col-form-label" for="sonTarih">Son Tarih:</label>
+                <input id="sonTarih" name="sonTarih" type="date" class="form-control col-sm-2" required />
+                <button class="btn btn-success" id="btnHrmArlgGtr" name="btnHrmArlgGtr" onclick="gelirleriGetir()">
+                    Getir
+                </button>
+            </div>
+        </div>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#harcamalar">Sarfiyât</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#gelirler">Akarât</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#varidat">Varidât</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#odemeplani">Ödeme Planı</a>
+            </li>
+        </ul>
+        <!-- /Nav tabs -->
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div id="harcamalar" class="container tab-pane active"><br>
+                <h3>Sarfiyât</h3>
+                <!-- page-content Harcamalar -->
+                <div id="page-content">
+                    <div id="sayfa-ustu">
+                        <form id="harcama-kayit-formu" action="#" method="post">
+                            <div class="input-group mb-3">
+                                <input id="Tarih" name="Tarih" type="date" placeholder="Tarih" class="form-control"
+                                    required />
+                                <select id="RbtHarcamaNevleri" name="RbtHarcamaNevleri"
+                                    placeholder="Harcama Nevi Giriniz" class="form-control" required></select>
+                                <input id="Mikdar" name="Mikdar" type="Number" placeholder="Mikdar" class="form-control"
+                                    min="1" required />
+                                <input id="Izah" name="Izah" type="text" placeholder="İzah" class="form-control" />
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-success" id="btnKaydet" name="btnKaydet" type="submit">
+                                        Kaydı Ekle
+                                    </button>
+                                    <button class="btn btn-danger" id="btnGuncellemeyiIptalEt"
+                                        name="btnGuncellemeyiIptalEt" onclick="harcamaDuzeltmeyiIptalEt()" type="button"
+                                        style="display:none">
+                                        İptal
+                                    </button>
+                                </div>
+                                <input id="id" name="id" type="hidden" />
+                            </div>
+                        </form>
+                    </div>
+                    <div id="hataGoster"></div>
+                    <div id="sayfa-ortasi">
+                        <div id="harcama-listesi" class="table-responsive">
+                            <table class="table-bordered table-hover table-responsive table-sm">
+                                <thead>
+                                    <tr>
+                                        <th class="w-10-pct">Tarih</th>
+                                        <th class="w-10-pct">Nev</th>
+                                        <th class="w-15-pct">Mikdar</th>
+                                        <th class="w-15-pct">İzah</th>
+                                        <th class="w-25-pct text-align-center">İşlemler</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="harcama-tablo-govde">
+                                    <tr>
+                                        <td colspan="5">Hiç Harcama Yok! Ne güzel:-)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="container" style="margin-top: 10px">
+                            <div class="row">
+                                <div class="col-sm"></div>
+                                <div class="col-sm">
+                                    <div class="content4"></div>
+                                    <nav aria-label="Page navigation example">
+                                        <div class="divHarcamaSahifeleme"></div>
+                                    </nav>
+                                </div>
+                                <div class="col-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sayfa-alti"></div>
+                </div>
+                <!-- /page-content Harcamalar -->
+            </div>
+            <div id="gelirler" class="container tab-pane fade"><br>
+                <h3>Akarât</h3>
+                <!-- page-content Gelirler -->
+                <div id="gelir-page-content">
+                    <div id="gelir-sayfa-ustu">
+                        <form id="gelir-kayit-formu" action="#" method="post">
+                            <div class="input-group mb-3">
+                                <input id="GelirTarih" name="Tarih" type="date" placeholder="Tarih" class="form-control"
+                                    required />
+                                <select id="RbtGelirNevleri" name="RbtGelirNevleri" placeholder="Gelir Nevi Giriniz"
+                                    class="form-control" required></select>
+                                <input id="GelirMikdar" name="Mikdar" type="Number" placeholder="Mikdar"
+                                    class="form-control" min="1" required />
+                                <input id="GelirIzah" name="Izah" type="text" placeholder="İzah" class="form-control" />
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-success" id="btnGelirKaydet" name="btnKaydet" type="submit">
+                                        Kaydı Ekle
+                                    </button>
+                                    <button class="btn btn-danger" id="btnGelirGuncellemeyiIptalEt"
+                                        name="btnGelirGuncellemeyiIptalEt" onclick="gelirDuzeltmeyiIptalEt()"
+                                        type="button" style="display:none">
+                                        İptal
+                                    </button>
+                                </div>
+                                <input id="Gelirid" name="id" type="hidden" />
+                            </div>
+                        </form>
+                    </div>
+                    <div id="hataGosterGelirler"></div>
+                    <div id="gelir-sayfa-ortasi">
+                        <div id="gelir-listesi" class="table-responsive">
+                            <table class="table-bordered table-hover table-responsive table-sm">
+                                <thead>
+                                    <tr>
+                                        <th class="w-10-pct">Tarih</th>
+                                        <th class="w-10-pct">Nev</th>
+                                        <th class="w-15-pct">Mikdar</th>
+                                        <th class="w-15-pct">İzah</th>
+                                        <th class="w-25-pct text-align-center">İşlemler</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="gelir-tablo-govde">
+                                    <tr>
+                                        <td colspan="5">Hiç Gelir Yok! Ne güzel:-)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="container" style="margin-top: 10px">
+                            <div class="row">
+                                <div class="col-sm"></div>
+                                <div class="col-sm">
+                                    <div class="content4"></div>
+                                    <nav aria-label="Page navigation example">
+                                        <div class="divGelirSahifeleme"></div>
+                                    </nav>
+                                </div>
+                                <div class="col-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sayfa-alti"></div>
+                </div>
+                <!-- /page-content Gelirler -->
+            </div>
+            <div id="varidat" class="container tab-pane fade"><br>
+                <h3>Varidât</h3>
+            </div>
+            <div id="odemeplani" class="container tab-pane fade"><br>
+                <h3>Ödeme Planı</h3>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="app/assets/js/sair/jquery-3.3.1.js"></script>
+    <!-- <script src="app/assets/js/sair/popper.min.js"></script> -->
+    <script src="app/assets/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+    <script src="app/assets/fontawesome-free-5.7.1-web/js/fontawesome.min.js"></script>
+    <script src="app/assets/js/sair/bootbox.min.js"></script>
+    <script src="app/assets/js/sair/jquery.bootpag.js"></script>
+    <script src="app/assets/js/asg/ensar.js"></script>
+    <script src="app/assets/js/project.js"></script>
+
+    <script src="app/assets/js/gelirler/gelir-getir-tamami.js"></script>
+    <script src="app/assets/js/gelirler/gelir-olustur.js"></script>
+    <script src="app/assets/js/gelirler/gelir-guncelle.js"></script>
+    <script src="app/assets/js/gelirler/gelirler.js"></script>
+
+    <script src="app/assets/js/harcamalar/harcama-getir-tamami.js"></script>
+    <script src="app/assets/js/harcamalar/harcama-olustur.js"></script>
+    <script src="app/assets/js/harcamalar/harcama-guncelle.js"></script>
+    <script src="app/assets/js/harcamalar/harcamalar.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+Time : 09:33:55
+Init: SQLSTATE[HY093]: Invalid parameter number
+Raw SQL : Select 
+              (SELECT IFNULL(Sum(Mikdar), 0) As Yekun FROM Gelirler Where Tarih Between :ilkTarih And :sonTarih)As gelirlerYekunu,
+              (SELECT IFNULL(Sum(Mikdar), 0) As Yekun FROM Harcamalar Where Tarih Between :ilkTarih And :sonTarih)As harcamalarYekunu,
+              (SELECT IFNULL(Sum(Mikdar), 0) As Yekun FROM Varidatlar Where Tarih Between :ilkTarih And :sonTarih)As varidatlarYekunu

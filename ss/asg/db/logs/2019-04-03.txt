@@ -1,0 +1,77 @@
+Time : 16:18:40
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:40
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:39
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:39
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:31
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:31
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:31
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:31
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:31
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:31
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:31
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:15
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:15
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:15
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:15
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:11
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:11
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:11
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:11
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:05
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:05
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:05
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:04
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:04
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:04
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 16:18:04
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
